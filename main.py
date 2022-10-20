@@ -14,8 +14,3 @@ def update(list_label, units, weight):
         list_label[i].config(text=f"{weight_after} {units[i]}")
 
 
-root = tkinter.Tk()
-
-
-
-root.mainloop()
