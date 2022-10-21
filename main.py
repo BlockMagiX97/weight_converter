@@ -3,6 +3,7 @@ import tkinter
 units = ["Grams", "Lbs"]
 
 def convert(to, weight):
+    # Converts kgs to lbs and grams
     match to.lower():
         case "grams":
             return weight * 1000
@@ -10,6 +11,7 @@ def convert(to, weight):
             return weight * 2.20462262185
 
 def update(list_label, units, weight):
+    # Updates output labels
     try:
         for i in range(len(units)):
             weight_after = convert(units[i], float(weight))
@@ -20,7 +22,7 @@ def update(list_label, units, weight):
         for label in list_label[1:]:
             label.config(text="")
 
-
+# Graphical part
 root = tkinter.Tk()
 
 inputFrame = tkinter.Frame(root)
@@ -35,6 +37,7 @@ weightEntry.pack(side=tkinter.LEFT)
 updateButton = tkinter.Button(inputFrame , text="UPDATE", command=lambda: update(listLabels, units, weightEntry.get()))
 updateButton.pack(side=tkinter.RIGHT)
 
+# Adds labels to the screen
 for label in listLabels:
     label.pack()
 
